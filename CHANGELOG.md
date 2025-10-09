@@ -1,3 +1,8 @@
+## 0.8.3
+* Raise the Dart SDK constraint to `>=3.0.0 <4.0.0` for compatibility with the latest Firebase tooling.
+* Allow `rxdart` versions `>=0.27.7 <0.29.0` to match the newer Firebase dependency graph.
+* Refresh the example and tests to import `flutter_blue_fork` and resolve Flutter 3.35 deprecations.
+
 ## 0.8.0
 * Migrate the plugin to null safety.
 
