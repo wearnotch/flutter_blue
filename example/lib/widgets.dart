@@ -3,7 +3,7 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_blue/flutter_blue.dart';
+import 'package:flutter_blue_fork/flutter_blue.dart';
 
 class ScanResultTile extends StatelessWidget {
   const ScanResultTile({Key? key, required this.result, this.onTap})
@@ -94,8 +94,8 @@ class ScanResultTile extends StatelessWidget {
       trailing: ElevatedButton(
         child: Text('CONNECT'),
         style: ButtonStyle(
-          backgroundColor: MaterialStatePropertyAll(Colors.black),
-          textStyle: MaterialStatePropertyAll(TextStyle(color: Colors.white)),
+          backgroundColor: WidgetStatePropertyAll(Colors.black),
+          textStyle: WidgetStatePropertyAll(TextStyle(color: Colors.white)),
         ),
         onPressed: (result.advertisementData.connectable) ? onTap : null,
       ),
@@ -198,13 +198,17 @@ class CharacteristicTile extends StatelessWidget {
               IconButton(
                 icon: Icon(
                   Icons.file_download,
-                  color: Theme.of(context).iconTheme.color?.withOpacity(0.5),
+                  color:
+                      Theme.of(context).iconTheme.color?.withValues(alpha: 0.5),
                 ),
                 onPressed: onReadPressed,
               ),
               IconButton(
                 icon: Icon(Icons.file_upload,
-                    color: Theme.of(context).iconTheme.color?.withOpacity(0.5)),
+                    color: Theme.of(context)
+                        .iconTheme
+                        .color
+                        ?.withValues(alpha: 0.5)),
                 onPressed: onWritePressed,
               ),
               IconButton(
@@ -212,7 +216,10 @@ class CharacteristicTile extends StatelessWidget {
                     characteristic.isNotifying
                         ? Icons.sync_disabled
                         : Icons.sync,
-                    color: Theme.of(context).iconTheme.color?.withOpacity(0.5)),
+                    color: Theme.of(context)
+                        .iconTheme
+                        .color
+                        ?.withValues(alpha: 0.5)),
                 onPressed: onNotificationPressed,
               )
             ],
@@ -260,14 +267,16 @@ class DescriptorTile extends StatelessWidget {
           IconButton(
             icon: Icon(
               Icons.file_download,
-              color: Theme.of(context).iconTheme.color?.withOpacity(0.5),
+              color:
+                  Theme.of(context).iconTheme.color?.withValues(alpha: 0.5),
             ),
             onPressed: onReadPressed,
           ),
           IconButton(
             icon: Icon(
               Icons.file_upload,
-              color: Theme.of(context).iconTheme.color?.withOpacity(0.5),
+              color:
+                  Theme.of(context).iconTheme.color?.withValues(alpha: 0.5),
             ),
             onPressed: onWritePressed,
           )

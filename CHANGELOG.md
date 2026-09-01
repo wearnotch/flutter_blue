@@ -1,3 +1,17 @@
+## 0.8.4
+* Remove the Android v1 embedding (`registerWith`/`PluginRegistry.Registrar`), which was
+  deleted from the Flutter engine in 3.29 and broke compilation on Flutter 3.29+.
+  The plugin already implemented the v2 embedding, so there is no API change.
+* Android build modernised for AGP 8: declare an explicit `namespace`, replace the
+  defunct `jcenter()` with `mavenCentral()`, upgrade protobuf-gradle-plugin
+  0.8.15 -> 0.9.4 and protobuf 3.17.3 -> 3.25.5, compileSdk 30 -> 34, minSdk 19 -> 21,
+  and compile against Java 17.
+
+## 0.8.3
+* Raise the Dart SDK constraint to `>=3.0.0 <4.0.0` for compatibility with the latest Firebase tooling.
+* Allow `rxdart` versions `>=0.27.7 <0.29.0` to match the newer Firebase dependency graph.
+* Refresh the example and tests to import `flutter_blue_fork` and resolve Flutter 3.35 deprecations.
+
 ## 0.8.0
 * Migrate the plugin to null safety.
 
